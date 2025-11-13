@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +7,30 @@
 }
 
 body {
-    font-family: "MS UI Gothic";
+    font-family: "Roboto";
 }
 
 .topbar {
     background-color: brown;
     display: flex;
     justify-content: space-between;
-    
-    padding: 20px;
 
     color: white;
+}
+
+.navbar {
+    display: flex;
+    margin-left: 50px;
+}
+
+.navbar * {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    padding: 0 10px;
+    height: 100%;
 }
 
 a {
@@ -23,10 +38,41 @@ a {
     color: white;
 }
 
+a:hover {
+    background-color: rgb(240, 248, 255);
+    color: brown;
+}
+
 i {
     color: white;
 }
 
-a i {
+.i-space-right {
     padding-right: 10px;
+}
+
+.header-icon {
+    color: brown;
+    font-size: 50px;
+
+    padding: 10px;
+}
+
+.header a {
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
+}
+
+.header a:hover {
+    background-color: transparent;
+}
+
+.login-link:hover i {
+    color: brown;
+}
+
+.login-link {
+    padding: 0 10px;
+    margin-right: 20px;
 }

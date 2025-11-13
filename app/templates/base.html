@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="header">
+        <a href="/"><i class="fa-solid fa-hospital-user header-icon"></i>GERENCIAMENTO DA GARRA ROBÓTICA</a>
+    </div>
     <div class="topbar">
         <div class="navbar">
-            <a href="/">HOME</a>
+            <a href="#">Posts</a>
+            <a href="#">Posts2</a>
+            <a href="#">Posts3</a>
         </div>
-        <a href="/login"><i class="fa-solid fa-user"></i>Login</a>
+        <a href="/login" class="login-link"><i class="fa-solid fa-user i-space-right"></i>Login</a>
     </div>
     
     {% block content %}{% endblock %}
