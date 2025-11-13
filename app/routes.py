@@ -3,4 +3,8 @@ from app import app, db
 
 @app.route('/')
 def index():
-    return 'fucionando yippieee'
+    return render_template('index.html')
+
+@app.route('/login')
+def login():
+    return 'fazendo ainda'

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "MS UI Gothic";
+}
+
+.topbar {
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 20px;
+
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+i {
+    color: white;
+}
+
+a i {
+    padding-right: 10px;
+}
