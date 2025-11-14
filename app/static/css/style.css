@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -16,6 +18,8 @@ body {
     justify-content: space-between;
 
     color: white;
+
+    margin-bottom: 20px;
 }
 
 .navbar {
@@ -29,16 +33,16 @@ body {
 }
 
 .navbar a {
-    padding: 0 10px;
+    padding: 4px 10px;
     height: 100%;
 }
 
-a {
+.topbar a {
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+.topbar a:hover {
     background-color: rgb(240, 248, 255);
     color: brown;
 }
@@ -62,6 +66,7 @@ i {
     font-size: 20px;
     font-weight: bold;
     color: brown;
+    text-decoration: none;
 }
 
 .header a:hover {
@@ -73,6 +78,21 @@ i {
 }
 
 .login-link {
-    padding: 0 10px;
+    padding: 4px 10px;
     margin-right: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    font-family: "Zalando Sans SemiExpanded";
+}
+
+.container h1 {
+    font-family: "Tinos";
+    margin-bottom: 20px;
+}
+
+.container a {
+    color: brown;
 }
