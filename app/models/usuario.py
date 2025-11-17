@@ -9,4 +9,4 @@ class Usuario(db.Model, UserMixin):
     username: so.Mapped[str] = so.mapped_column(sa.String(256), index=True, unique=True)
     email: so.Mapped[str] = so.mapped_column(sa.String(320), index=True, unique=True)
     password_hash: so.Mapped[str] = so.mapped_column(sa.String(256))
-    tipo_usuario : so.Mapped[int]
+    type_user : so.Mapped[str] = so.mapped_column(sa.String(20))
