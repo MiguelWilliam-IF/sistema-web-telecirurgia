@@ -7,14 +7,13 @@
     <h1>Cadstro</h1>
     <p>Faça o seu cadastro!</p>
 
-    <table>
+    <form action="" method="post">
         {% for field in form %}
-        <tr>
             <th>{{ field.label }}</td>
             <td>{{ field }}</td>
-        </tr>
+        
         {% endfor %}
-    </table>
+    </form>
 </div>
 
 {% endblock %}

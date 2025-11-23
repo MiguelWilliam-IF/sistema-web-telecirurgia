@@ -1,4 +1,4 @@
-from wtforms import Form, StringField, PasswordField, EmailField, RadioField, BooleanField
+from wtforms import Form, StringField, PasswordField, EmailField, RadioField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, length, Email
 
 class UsuarioForm(Form):
@@ -7,3 +7,4 @@ class UsuarioForm(Form):
     password = PasswordField("Senha", [DataRequired()])
     type_user = RadioField("Tipo de Usuário", validators=[DataRequired()], choices=[('externo', 'Externo'), ('aluno', 'Aluno'), ('servidor', 'Servidor')])
     remember = BooleanField("Lembrar de mim", validators=[DataRequired()])
+    submit = SubmitField("Salvar")

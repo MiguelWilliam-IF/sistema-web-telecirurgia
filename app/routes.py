@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
 from app import app, db
 from app.forms import UsuarioForm
+from app.controllers import UsuarioController
 
 @app.route('/')
 def index():
@@ -13,15 +14,23 @@ def login():
     if request.method == "POST" and form.validate: # FAZER O LOGIN (CONTROLADOR)
         return render_template("perfil/perfil.html")
     else: # MOSTRAR O FORMULÁRIO DE LOGIN
-        return render_template("login/login.html", form = form)
+        return render_template("usuario/login.html", form = form)
 
 @app.route('/cadastro', methods=["POST", "GET"])
 def cadastro():
     form = UsuarioForm(request.form)
-    if request.method == "POST" and form.validate: # FAZER O LOGIN (CONTROLADOR)
-        return render_template("perfil/perfil.html")
-    else: # MOSTRAR O FORMULÁRIO DE LOGIN
-        return render_template("login/cadastro.html", form = form)
+    
+    if request.method == "POST" and form.validate: # FAZER O CADASTRO (CONTROLADOR)
+        sucesso = UsuarioController.salvar(form)
+        if sucesso:
+            print('SUCESSO NO CADASTRO DO USUÁRIO!')
+            flash('Cadastro realizado com sucesso!', category='success')
+            return redirect(url_for('index'))
+        else:
+            flash('Erro na realização do cadastro!', category='error')
+            return render_template("usuario/cadastro.html")
+    
+    return render_template("usuario/cadastro.html", form = form)
 
 @app.route('/perfil')
 @login_required
