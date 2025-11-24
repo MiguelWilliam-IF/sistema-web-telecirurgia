@@ -10,27 +10,27 @@ def index():
 
 @app.route('/login', methods=["POST", "GET"])
 def login():
-    form = UsuarioForm(request.form)
-    if request.method == "POST" and form.validate: # FAZER O LOGIN (CONTROLADOR)
+    formulario = UsuarioForm()
+    if formulario.validate_on_submit(): # FAZER O LOGIN (CONTROLADOR)
         return render_template("perfil/perfil.html")
     else: # MOSTRAR O FORMULÁRIO DE LOGIN
-        return render_template("usuario/login.html", form = form)
+        return render_template("usuario/login.html", form = formulario)
 
 @app.route('/cadastro', methods=["POST", "GET"])
 def cadastro():
-    form = UsuarioForm(request.form)
+    formulario = UsuarioForm()
     
-    if request.method == "POST" and form.validate: # FAZER O CADASTRO (CONTROLADOR)
-        sucesso = UsuarioController.salvar(form)
+    if formulario.validate_on_submit(): # FAZER O CADASTRO (CONTROLADOR)
+        sucesso = UsuarioController.salvar(formulario)
         if sucesso:
             print('SUCESSO NO CADASTRO DO USUÁRIO!')
             flash('Cadastro realizado com sucesso!', category='success')
             return redirect(url_for('index'))
         else:
             flash('Erro na realização do cadastro!', category='error')
-            return render_template("usuario/cadastro.html")
+            return render_template("usuario/cadastro.html", form = formulario)
     
-    return render_template("usuario/cadastro.html", form = form)
+    return render_template("usuario/cadastro.html", form = formulario)
 
 @app.route('/perfil')
 @login_required

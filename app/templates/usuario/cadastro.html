@@ -7,12 +7,30 @@
     <h1>Cadstro</h1>
     <p>Faça o seu cadastro!</p>
 
-    <form action="" method="post">
-        {% for field in form %}
-            <th>{{ field.label }}</td>
-            <td>{{ field }}</td>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
         
-        {% endfor %}
+        <div class="field">
+            {{ form.username.label }}
+            {{ form.username(size=30) }}
+        </div>
+        <div class="field">
+            {{ form.email.label }}
+            {{ form.email(size=30) }}
+        </div>
+        <div class="field">
+            {{ form.password.label }}
+            {{ form.password(size=30) }}
+        </div>
+        <div class="field">
+            {{ form.type_user.label }}
+            {{ form.type_user }}
+        </div>
+        <div class="field">
+            {{ form.remember.label }}
+            {{ form.remember }}
+        </div>
+        <input type="submit" value="Salvar">
     </form>
 </div>
 
