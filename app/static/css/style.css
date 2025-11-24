@@ -96,3 +96,12 @@ i {
 .container a {
     color: brown;
 }
+
+.flashes {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(223, 223, 223);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

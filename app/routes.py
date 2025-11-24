@@ -21,15 +21,18 @@ def cadastro():
     formulario = UsuarioForm()
     
     if formulario.validate_on_submit(): # FAZER O CADASTRO (CONTROLADOR)
+        print('VALIDANDO...')
         sucesso = UsuarioController.salvar(formulario)
         if sucesso:
             print('SUCESSO NO CADASTRO DO USUÁRIO!')
             flash('Cadastro realizado com sucesso!', category='success')
             return redirect(url_for('index'))
         else:
+            print('ERRO NO CADASTRO DO USUÁRIO!')
             flash('Erro na realização do cadastro!', category='error')
             return render_template("usuario/cadastro.html", form = formulario)
     
+    print('Eh get')
     return render_template("usuario/cadastro.html", form = formulario)
 
 @app.route('/perfil')
