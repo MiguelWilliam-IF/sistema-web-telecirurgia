@@ -18,8 +18,11 @@
             <a href="#">Posts3</a>
         </div>
 
-        
+        {% if not current_user.is_authenticated %}
         <a href="/login" class="login-link"><i class="fa-solid fa-user i-space-right"></i>Login</a>
+        {% else %}
+        <a href="/perfil" class="login-link"><i class="fa-solid fa-user i-space-right"></i>Meu Perfil</a>
+        {% endif %}
     </div>
     
     {% with messages = get_flashed_messages(with_categories=true) %}

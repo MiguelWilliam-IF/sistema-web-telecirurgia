@@ -3,9 +3,17 @@
 {% block title %}Sistema Web Telecirurgia{% endblock %}
 
 {% block content %}
+
 <div class="container">
-    <h1>Perfil</h1>
-    <p>Seu perfil.</p>
+    <h1>{{ current_user.username }}</h1>
+    <p><strong>Tipo de usuário: </strong>{{ current_user.type_user }}</p>
+    
+    <div class="posts_container">
+        <h2>POSTS</h2>
+        <ul>
+            <li>blablabla</li>
+        </ul>
+    </div>
 </div>
 
 {% endblock %}

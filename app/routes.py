@@ -11,7 +11,7 @@ def index():
 @app.route('/perfil')
 @login_required
 def perfil():
-    return f'perfil uuuu DO {current_user.username}' # A FAZER
+    return render_template('perfil/perfil.html')
 
 @app.route('/post')
 def post():

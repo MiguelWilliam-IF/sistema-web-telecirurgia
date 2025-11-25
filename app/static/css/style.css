@@ -122,3 +122,7 @@ i {
     background-color: red;
     color: white;
 }
+
+.posts_container {
+    margin-top: 20px;
+}
