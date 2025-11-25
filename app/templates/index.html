@@ -3,9 +3,17 @@
 {% block title %}Sistema Web Telecirurgia{% endblock %}
 
 {% block content %}
+
+{% if not current_user.is_authenticated %}
 <div class="container">
     <h1>Bem vindo ao Sistema de Acompanhamento da Garra de Telecirurgia!</h1>
     <p>Esse sistema possibilita o gerenciamento das atividades realizadas com o projeto feito no <a href="https://portal.ifrn.edu.br/campus/ceara-mirim/">IFRN Campus Ceará-Mirim</a> "TELECIRURGIA ACESSÍVEL", que visa trazer o ensino sobre a telecirurgia a partir de um sistema que integra diversos conceitos que são aplicados em máquinas médicas reais, como o <a href="https://www.youtube.com/watch?v=nFaGI0b24Y8">DaVinci X</a>.</p>
 </div>
+{% else %}
+<div class="container">
+    <h1>Bem vindo, {{ current_user.username }}!</h1>
+    <p>Esse sistema possibilita o gerenciamento das atividades realizadas com o projeto feito no <a href="https://portal.ifrn.edu.br/campus/ceara-mirim/">IFRN Campus Ceará-Mirim</a> "TELECIRURGIA ACESSÍVEL", que visa trazer o ensino sobre a telecirurgia a partir de um sistema que integra diversos conceitos que são aplicados em máquinas médicas reais, como o <a href="https://www.youtube.com/watch?v=nFaGI0b24Y8">DaVinci X</a>.</p>
+</div>
+{% endif %}
 
 {% endblock %}
