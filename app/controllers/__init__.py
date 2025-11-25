@@ -1,1 +1,2 @@
 from .usuario_controller import UsuarioController
+from .login_controller import LoginController

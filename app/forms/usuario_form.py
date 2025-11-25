@@ -7,5 +7,5 @@ class UsuarioForm(FlaskForm):
     email = EmailField("Email", [DataRequired("Email obrigatório"), Email("Email inválido")])
     password = PasswordField("Senha", [DataRequired()])
     type_user = RadioField("Tipo de Usuário", validators=[DataRequired()], choices=[('externo', 'Externo'), ('aluno', 'Aluno'), ('servidor', 'Servidor')])
-    remember = BooleanField("Lembrar de mim")
+    remember_me = BooleanField("Lembrar de mim")
     submit = SubmitField("Salvar")

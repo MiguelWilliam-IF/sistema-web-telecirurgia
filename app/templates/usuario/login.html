@@ -7,6 +7,24 @@
     <h1>Login</h1>
     <p>Faça login na sua conta.</p>
 
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        
+        <div class="field">
+            {{ form.email.label }}
+            {{ form.email(size=30) }}
+        </div>
+        <div class="field">
+            {{ form.password.label }}
+            {{ form.password(size=30) }}
+        </div>
+        <div class="field">
+            {{ form.remember_me.label }}
+            {{ form.remember_me }}
+        </div>
+        <input type="submit" value="Salvar">
+    </form>
+
     <a href="/cadastro">Criar nova conta</a>
 </div>
 

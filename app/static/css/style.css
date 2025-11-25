@@ -100,12 +100,25 @@ i {
 .flashes {
     width: 80%;
     margin: auto;
+}
+
+.flashes li {
     background-color: rgb(223, 223, 223);
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
+    list-style-type: none;
+
+    color: black;
+    background-color: gray;
 }
 
-.flashes .li {
-    list-style-type: none;
+.flashes li.success {
+    background-color: green;
+    color: white;
+}
+
+.flashes li.error {
+    background-color: red;
+    color: white;
 }
