@@ -4,16 +4,17 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container container_info_usuario">
     <h1>{{ current_user.username }}</h1>
     <p><strong>Tipo de usuário: </strong>{{ current_user.type_user }}</p>
+    <a href="/logout">Sair...</a>
+</div>
     
-    <div class="posts_container">
-        <h2>POSTS</h2>
-        <ul>
-            <li>blablabla</li>
-        </ul>
-    </div>
+<div class="container posts_container">
+    <h2>Meus posts</h2>
+    <ul>
+        <li>blablabla</li>
+    </ul>
 </div>
 
 {% endblock %}

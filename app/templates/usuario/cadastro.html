@@ -24,7 +24,12 @@
         </div>
         <div class="field">
             {{ form.type_user.label }}
-            {{ form.type_user }}
+            {% for subfield in form.type_user %}
+            <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            </tr>
+            {% endfor %}
         </div>
         <div class="field">
             {{ form.remember_me.label }}

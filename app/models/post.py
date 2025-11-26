@@ -10,4 +10,4 @@ class Post(db.Model):
     user: so.Mapped[models.Usuario] = so.relationship(back_populates='posts')
     user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(models.Usuario.id), index=True)
     date: so.Mapped[datetime] = so.mapped_column(index=True, default=sa.func.now())
-    body : so.Mapped[str] = so.mapped_column(sa.String(280))
+    body : so.Mapped[str] = so.mapped_column(sa.String(256))

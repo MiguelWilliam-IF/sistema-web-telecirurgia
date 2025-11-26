@@ -1,8 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
 from app import app, db
-from app.forms import UsuarioForm, LoginForm
-from app.controllers import UsuarioController, LoginController
+from app.forms import UsuarioForm, LoginForm, PostForm
+from app.controllers import UsuarioController, LoginController, PostController
 
 @app.route('/')
 def index():
@@ -15,7 +15,25 @@ def perfil():
 
 @app.route('/post')
 def post():
-    return render_template('post/post.html')
+    return render_template('post/post.html', criar = False)
+
+@app.route('/post/create', methods=["POST", "GET"])
+@login_required
+def createPost():
+    formulario = PostForm()
+
+    if formulario.validate_on_submit():
+        sucesso = PostController.novoPost(formulario, current_user)
+        if sucesso:
+            print('SUCESSO NA CRIAÇÃO DE NOVA POSTAGEM')
+            flash('Nova postagem criada!', category='success')
+            return redirect(url_for('post'))
+        # ELSE:
+        print('ERRO NA CRIAÇÃO DE NOVA POSTAGEM')
+        flash('Erro na criação de nova postagem!', category='error')
+        return render_template('post/create.html', form = formulario)
+
+    return render_template('post/create.html', form = formulario)
 
 @app.route('/login', methods=["POST", "GET"])
 def login():

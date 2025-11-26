@@ -5,7 +5,12 @@
 {% block content %}
 <div class="container">
     <h1>Post</h1>
-    <p>Faxzer post</p>
+
+    {% if current_user.is_authenticated %}
+    <a href="/post/create">Criar novo post</a>
+    {% endif %}
+
+    <p>Vendo posts....</p>
 </div>
 
 {% endblock %}
