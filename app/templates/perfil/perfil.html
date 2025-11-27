@@ -12,9 +12,29 @@
     
 <div class="container posts_container">
     <h2>Meus posts</h2>
+    {% if posts %}
     <ul>
-        <li>blablabla</li>
+        {% for post in posts %}
+        <li>
+            <h3 class="post-title">
+                {% if not post.title %}
+                    Postagem sem título de {{ post.user.username }}
+                {% else %}
+                    {{ post.title }}
+                {% endif %}
+            </h2>
+            <p>
+                {{ post.body }}
+            </p>
+            <p class="data">
+                {{ post.date }}
+            </p>
+        </li>
+        {% endfor %}
     </ul>
+    {% else %}
+    <p>sem posts</p>
+    {% endif %}
 </div>
 
 {% endblock %}

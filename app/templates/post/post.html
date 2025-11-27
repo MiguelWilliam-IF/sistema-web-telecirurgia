@@ -10,7 +10,24 @@
     <a href="/post/create">Criar novo post</a>
     {% endif %}
 
-    <p>Vendo posts....</p>
+    {% for post in posts %}
+    <div class="post-container container">
+        <h2 class="post-title">
+            {% if not post.title %}
+                Postagem sem título de {{ post.user.username }}
+            {% else %}
+                {{ post.title }}
+            {% endif %}
+        </h2>
+        <p>
+            {{ post.body }}
+        </p>
+        <p class="data">
+            {{ post.date }}
+        </p>
+        <a href="/post/delete/{{ post.id }}">DELETAR POSTAGEM</a>
+    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

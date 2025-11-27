@@ -11,11 +11,17 @@ def index():
 @app.route('/perfil')
 @login_required
 def perfil():
-    return render_template('perfil/perfil.html')
+    return render_template('perfil/perfil.html', posts = PostController.getPostsByUserID(current_user.id))
 
 @app.route('/post')
 def post():
-    return render_template('post/post.html', criar = False)
+    return render_template('post/post.html', posts = PostController.listarPosts())
+
+@app.route('/post/delete/<int:id>')
+@login_required
+def deletePost(id):
+    #if current_user.id != PostController.getPostByID(id)
+    pass
 
 @app.route('/post/create', methods=["POST", "GET"])
 @login_required
