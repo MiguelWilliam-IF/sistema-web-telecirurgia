@@ -38,7 +38,10 @@ class PostController:
         try:
             post = Post.query.get(id)
             db.session.delete(post)
-            db.session.comit()
+            db.session.commit()
+            return True
+        
         except Exception as e:
             db.session.rollback()
             print(f'ERRO NO DELETE DE POST: {e}')
+            return False

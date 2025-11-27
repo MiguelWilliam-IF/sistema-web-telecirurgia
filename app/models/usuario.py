@@ -10,4 +10,4 @@ class Usuario(db.Model, UserMixin):
     email: so.Mapped[str] = so.mapped_column(sa.String(320), index=True, unique=True)
     password_hash: so.Mapped[str] = so.mapped_column(sa.String(256))
     type_user : so.Mapped[str] = so.mapped_column(sa.String(20))
-    posts : so.Mapped[list["Post"]] = so.relationship(back_populates="user")
+    posts : so.Mapped[list["Post"]] = so.relationship(back_populates="user") # Type : ignore

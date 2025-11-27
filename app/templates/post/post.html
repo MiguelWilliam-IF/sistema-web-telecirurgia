@@ -25,7 +25,9 @@
         <p class="data">
             {{ post.date }}
         </p>
+        {% if current_user.id == post.user_id %}
         <a href="/post/delete/{{ post.id }}">DELETAR POSTAGEM</a>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
