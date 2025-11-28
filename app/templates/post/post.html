@@ -30,7 +30,7 @@
             {{ post.date }}
         </p>
         {% if current_user.id == post.user_id %}
-        <a href="/post/delete/{{ post.id }}">DELETAR POSTAGEM</a>
+        <a href="/post/{{ post.id }}/delete">DELETAR POSTAGEM</a>
         {% endif %}
     </div>
     {% endfor %}

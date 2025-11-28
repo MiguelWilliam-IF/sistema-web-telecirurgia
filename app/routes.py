@@ -17,7 +17,7 @@ def perfil():
 def post():
     return render_template('post/post.html', posts = PostController.listarPosts())
 
-@app.route('/post/delete/<int:id>')
+@app.route('/post/<int:id>/delete')
 @login_required
 def deletePost(id):
     if current_user.id != PostController.getPostByID(id).user_id:
@@ -33,13 +33,16 @@ def deletePost(id):
     flash('Erro em apagar a postagem.', category='error')
     return redirect(url_for('perfil'))
     
-@app.route('/post/edit/<int:id>')
+@app.route('/post/<int:id>/edit', methods=["POST", "GET"])
 @login_required
 def editPost(id):
     if current_user.id != PostController.getPostByID(id).user_id:
         print('ERRO! USUÁRIO NÃO PODE EDITAR POSTAGEM QUE NÃO É SUA.')
         flash("Não foi possível realizar a ação.", category="error")
         return redirect(url_for("perfil"))
+    
+    post = PostController.getPostByID(id)
+    form = PostForm(obj=post)
     #  =======  A FAZER  =========
 
 @app.route('/post/create', methods=["POST", "GET"])
