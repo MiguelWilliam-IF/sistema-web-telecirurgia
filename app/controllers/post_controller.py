@@ -22,8 +22,9 @@ class PostController:
             return False
     
     def listarPosts():
-        posts = Post.query.all()
-        return posts
+        stmt = sa.select(Post).order_by(Post.date.desc())
+        result = db.session.execute(stmt)
+        return result.scalars()
     
     def getPostByID(id):
         post = Post.query.get(id)

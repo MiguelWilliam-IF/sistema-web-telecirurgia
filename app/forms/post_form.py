@@ -4,5 +4,6 @@ from wtforms.validators import DataRequired, length
 from wtforms.widgets import TextArea
 
 class PostForm(FlaskForm):
+    title = StringField("Título da postagem")
     body = StringField("Texto da postagem", validators=[DataRequired("Insira o texto da postagem!"), length(min=4, max=255, message="Texto curto ou longo demais")], widget=TextArea())
     submit = SubmitField("Postar")

@@ -19,6 +19,10 @@
                 {{ post.title }}
             {% endif %}
         </h2>
+        <h3 class="author">
+            Autor: {{ post.user.username }}
+        </h3>
+
         <p>
             {{ post.body }}
         </p>
