@@ -4,15 +4,26 @@
 
 {% block content %}
 
-<div class="container container_info_usuario">
-    <h1>{{ current_user.username }}</h1>
-    <p><strong>Tipo de usuário: </strong>{{ current_user.type_user }}</p>
-    <a href="/logout">Sair...</a>
+<div class="container container-info-usuario">
+    <div class="nome-icone-papel">
+        <i class="fa-solid fa-user i-space-right"></i>
+        <h1>{{ current_user.username }}</h1>
+        <p><strong>Tipo de usuário: </strong>{{ current_user.type_user }}</p>
+    </div>
+    
+    <div class="detalhes">
+        {% if postsLen > 0 %}
+        <p><strong>Quantidade de posts feitos: </strong>{{ postsLen }}</p>
+        {% else %}
+        <p>Você não possui nenhuma <strong><a href="/post">postagem</a></strong></p>
+        {% endif %}
+        <a class="logout-btn" href="/logout">Logout...</a>    
+    </div>
 </div>
     
 <div class="container posts_container">
     <h2>Meus posts</h2>
-    {% if posts %}
+    {% if postsLen > 0 %}
         {% for post in posts %}
         <div class="post-container container">
             <h2 class="post-title">
@@ -32,8 +43,7 @@
         </div>
         {% endfor %}
     {% else %}
-    <p>sem posts</p>
-    
+    <p>Sem posts</p>
     {% endif %}
 </div>
 

@@ -131,12 +131,12 @@ i {
     border-left: 2px solid brown;
 
     box-shadow: none;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .post-container:hover {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
     cursor: pointer;
 }
 
@@ -148,4 +148,93 @@ i {
 .post-container .data {
     text-align: right;
     font-style: italic;
+}
+
+a.new-post-btn {
+    background-color: rgb(255, 255, 255);
+    border: brown 1px solid;
+    color: brown;
+    padding: 10px;
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a.new-post-btn i {
+    margin-right: 5px;
+    color: brown;
+    transition: color 0.3s ease-in-out;
+}
+
+a.new-post-btn:hover {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background-color: brown;
+    color: white;
+}
+
+a.new-post-btn:hover i {
+    transition: color 0.3s ease-in-out;
+    color: white;
+}
+
+.container-info-usuario {
+    margin-bottom: 40px;
+
+    color: white;
+    background-color: brown;
+    width: 300px;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.container-info-usuario p {
+    text-align: center;
+}
+
+.nome-icone-papel i {
+    color: brown;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.container-info-usuario .nome-icone-papel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid brown;
+    border-radius: 5px 5px 0 0;
+
+    color: brown;
+}
+
+.container-info-usuario .detalhes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    padding: 0 20px 10px 20px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+.container-info-usuario .detalhes a {
+    color: white;
 }

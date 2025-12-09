@@ -11,7 +11,7 @@ def index():
 @app.route('/perfil')
 @login_required
 def perfil():
-    return render_template('perfil/perfil.html', posts = PostController.getPostsByUserID(current_user.id))
+    return render_template('perfil/perfil.html', posts = PostController.getPostsByUserID(current_user.id), postsLen = len(list(PostController.getPostsByUserID(current_user.id))))
 
 @app.route('/post')
 def post():

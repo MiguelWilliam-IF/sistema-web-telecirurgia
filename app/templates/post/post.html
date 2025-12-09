@@ -7,7 +7,7 @@
     <h1>Post</h1>
 
     {% if current_user.is_authenticated %}
-    <a href="/post/create">Criar novo post</a>
+    <a class="new-post-btn" href="/post/create"><i class="fa-solid fa-plus"></i>Criar novo post</a>
     {% endif %}
 
     {% for post in posts %}
