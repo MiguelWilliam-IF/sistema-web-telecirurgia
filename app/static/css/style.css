@@ -123,6 +123,29 @@ i {
     color: white;
 }
 
-.posts_container {
+.post-container {
     margin-top: 20px;
+    border-radius: 0 10px 10px 0 ;
+    padding: 10px;
+
+    border-left: 2px solid brown;
+
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.post-container:hover {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.post-container .author {
+    margin-left: 10px;
+    color: rgb(70, 70, 70);
+}
+
+.post-container .data {
+    text-align: right;
+    font-style: italic;
 }

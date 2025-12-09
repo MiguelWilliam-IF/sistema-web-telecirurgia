@@ -8,6 +8,7 @@
 
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
+
         <div class="field">
             {{ form.title.label }}
             {{ form.title(size=30) }}
@@ -16,11 +17,29 @@
         <div class="field">
             {{ form.body.label }} 
             <div class="body-input">
-                {{ form.body(rows=10, cols=60) }}
+                {{ form.body(rows=10, cols=60, maxlength=255) }}
             </div>
         </div>
+
+        <p><span id="charCount">0</span> / 255 caracteres</p>
+
         <input type="submit" value="Postar">
     </form>
-
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const textarea = document.querySelector("textarea[name='body']");
+    const counter = document.getElementById("charCount");
+    const limit = 255;
+
+    textarea.addEventListener("input", function() {
+        const length = textarea.value.length;
+        counter.textContent = length;
+
+        counter.style.color = length >= limit ? "red" : "black";
+    });
+});
+</script>
+
 {% endblock %}

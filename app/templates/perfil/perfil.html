@@ -13,10 +13,9 @@
 <div class="container posts_container">
     <h2>Meus posts</h2>
     {% if posts %}
-    <ul>
         {% for post in posts %}
-        <li>
-            <h3 class="post-title">
+        <div class="post-container container">
+            <h2 class="post-title">
                 {% if not post.title %}
                     Postagem sem título de {{ post.user.username }}
                 {% else %}
@@ -30,11 +29,11 @@
                 {{ post.date }}
             </p>
             <a href="post/{{ post.id }}/delete">APAGAR POSTAGEM</a>
-        </li>
+        </div>
         {% endfor %}
-    </ul>
     {% else %}
     <p>sem posts</p>
+    
     {% endif %}
 </div>
 

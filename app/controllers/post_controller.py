@@ -31,7 +31,7 @@ class PostController:
         return post
     
     def getPostsByUserID(user_id):
-        selectStmt = sa.select(Post).where(Post.user_id == user_id)
+        selectStmt = sa.select(Post).where(Post.user_id == user_id).order_by(Post.date.desc())
         result = db.session.execute(selectStmt)
         return result.scalars()
     
