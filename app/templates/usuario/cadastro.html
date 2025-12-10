@@ -7,36 +7,35 @@
     <h1>Cadastro</h1>
     <p>Faça o seu cadastro!</p>
 
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        
-        <div class="field">
-            {{ form.username.label }}
-            {{ form.username(size=30) }}
-        </div>
-        <div class="field">
-            {{ form.email.label }}
-            {{ form.email(size=30) }}
-        </div>
-        <div class="field">
-            {{ form.password.label }}
-            {{ form.password(size=30) }}
-        </div>
-        <div class="field">
-            {{ form.type_user.label }}
-            {% for subfield in form.type_user %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div class="field">
-            {{ form.remember_me.label }}
-            {{ form.remember_me }}
-        </div>
-        <input type="submit" value="Salvar">
-    </form>
+    <div class="container-forms">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            
+            <div class="field">
+                {{ form.username.label }}
+                {{ form.username(size=30) }}
+            </div>
+            <div class="field">
+                {{ form.email.label }}
+                {{ form.email(size=30) }}
+            </div>
+            <div class="field">
+                {{ form.password.label }}
+                {{ form.password(size=30) }}
+            </div>
+            <div class="field tipo-usuario-field">
+                {{ form.type_user.label }}
+                {% for subfield in form.type_user %}
+                <div class="escolha-tipo-usuario-container">
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </div>
+                {% endfor %}
+            </div>
+            <input type="submit" value="Salvar">
+        </form>
+    </div>
+
 </div>
 
 {% endblock %}

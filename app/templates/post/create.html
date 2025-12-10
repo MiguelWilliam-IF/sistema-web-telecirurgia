@@ -6,7 +6,8 @@
 <div class="container">
     <h1>Novo Post</h1>
 
-    <form action="" method="post" novalidate>
+    <div class="container-forms">
+        <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
 
         <div class="field">
@@ -24,7 +25,9 @@
         <p><span id="charCount">0</span> / 255 caracteres</p>
 
         <input type="submit" value="Postar">
-    </form>
+        </form>
+    </div>
+
 </div>
 
 <script>

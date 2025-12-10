@@ -206,6 +206,10 @@ a.new-post-btn:hover i {
     margin-bottom: 20px;
 }
 
+.nome-icone-papel h1 {
+    text-align: center;
+}
+
 .container-info-usuario .nome-icone-papel {
     display: flex;
     flex-direction: column;
@@ -237,4 +241,170 @@ a.new-post-btn:hover i {
 
 .container-info-usuario .detalhes a {
     color: white;
+}
+
+/* ======= FORM ======= */
+.container-forms {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Cada campo */
+.field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.field label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Inputs padrão */
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.field input:focus {
+    border-color: brown;
+    box-shadow: 0 0 0 3px rgba(138, 0, 0, 0.2);
+}
+
+/* ======= RADIO BUTTONS (tipo de usuário) ======= */
+.field tr {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+/* Fazer os radios ficarem menores e mais discretos */
+.field input[type="radio"] {
+    accent-color: brown;
+}
+
+.field input[type="radio"]:focus {
+    box-shadow: none;
+}
+
+/* Melhor alinhamento visual do rótulo */
+.field tr td:last-child {
+    font-size: 14px;
+    color: #444;
+}
+
+/* ======= CHECKBOX ======= */
+.field input[type="checkbox"] {
+    accent-color: brown;
+    width: fit-content;
+}
+
+.field input[type="checkbox"]:focus {
+    box-shadow: none;
+}
+
+/* ======= BOTÃO SUBMIT ======= */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: brown;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+input[type="submit"]:hover {
+    background: #b30000;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+a[href="/cadastro"] {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.escolha-tipo-usuario-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.escolha-tipo-usuario-container input, .remember-me-field input {
+    width: fit-content;
+}
+
+.escolha-tipo-usuario-container label {
+    margin: 0 0 0 10px;
+}
+
+.remember-me-field label {
+    margin: 0;
+}
+
+.tipo-usuario-field, .remember-me-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 20px;
+}
+
+.tipo-usuario-field {
+    justify-content: space-around;
+}
+
+.tipo-usuario-field label{
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+/* ======= TEXTAREA (corpo do post) ======= */
+.body-input textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    resize: vertical;
+    max-height: 400px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.25s;
+    min-height: 180px;
+}
+
+.body-input textarea:focus {
+    border-color: #8A0000;
+    box-shadow: 0 0 0 3px rgba(138, 0, 0, 0.15);
+}
+
+#charCount {
+    font-weight: bold;
+}
+
+.container-forms p:has(#charCount) {
+    /* seu estilo aqui */
+    font-size: 14px;
+    color: #444;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
